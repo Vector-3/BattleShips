@@ -174,7 +174,6 @@ public static class GameController
 				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
 
 				while (Audio.SoundEffectPlaying(GameResources.GameSound("Sink"))) {
-					SwinGame.Delay(10);
 					SwinGame.RefreshScreen();
 				}
 
@@ -377,7 +376,6 @@ public static class GameController
 	/// <param name="setting">the new difficulty level</param>
 	public static void SetDifficulty(AIOption setting)
 	{
-
 		_aiSetting = setting;
 	}
 

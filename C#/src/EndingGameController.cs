@@ -37,8 +37,8 @@ static class EndingGameController
         } else {
 			whatShouldIPrint = "-- WINNER --";
 		}
-        SwinGame.DrawText (whatShouldIPrint, Color.White, Color.Transparent,GameResources.GameFont ("ArialLarge"),FontAlignment.AlignCenter, toDraw);
-	}
+        SwinGame.DrawText(whatShouldIPrint, Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, toDraw);
+    }
 
 	/// <summary>
 	/// Handle the input during the end of the game. Any interaction
@@ -49,7 +49,7 @@ static class EndingGameController
     /// </remarks>
 	public static void HandleEndOfGameInput()
 	{
-        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.ReturnKey) || SwinGame.KeyTyped(KeyCode.EscapeKey)) {
+        if (SwinGame.KeyTyped(KeyCode.ReturnKey) || SwinGame.KeyTyped(KeyCode.EscapeKey)) {
 			HighScoreController.ReadHighScore(GameController.HumanPlayer.Score);
 			GameController.EndCurrentState();
 		}

@@ -98,10 +98,13 @@ public class AIEasyPlayer : AIPlayer
         if (result.Value == ResultOfAttack.Hit)
         {
             _CurrentState = AIStates.TargetingShip;
-            AddTarget(row - 1, col);
-            AddTarget(row, col - 1);
-            AddTarget(row + 1, col);
-            AddTarget(row, col + 1);
+            Random rnd = new Random();
+            int row_rand = rnd.Next(-1, 1);
+            int column_rand = rnd.Next(-1, 1);
+            AddTarget(row - 1 + row_rand, col + column_rand);
+            AddTarget(row + row_rand, col - 1 + column_rand);
+            AddTarget(row + 1 + row_rand, col + column_rand);
+            AddTarget(row + row_rand, col + 1 + column_rand);
         }
         else if (result.Value == ResultOfAttack.ShotAlready)
         {
@@ -116,12 +119,9 @@ public class AIEasyPlayer : AIPlayer
     /// <param name="column">the column of the targets location</param>
     private void AddTarget(int row, int column)
     {
-        Random rnd = new Random();
-        int row_rand = rnd.Next(-1, 1);
-        int column_rand = rnd.Next(-1, 1);
-        if (row + row_rand >= 0 && column + column_rand >= 0 && row + row_rand < EnemyGrid.Height && column + column_rand < EnemyGrid.Width && EnemyGrid[row + row_rand, column + column_rand] == TileView.Sea)
+        if (row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid[row, column] == TileView.Sea)
         {
-            _Targets.Push(new Location(row + row_rand, column + column_rand));
+            _Targets.Push(new Location(row, column));
         }
     }
 }

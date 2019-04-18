@@ -136,23 +136,23 @@ public static class GameResources
 
 		ShowMessage("Loading fonts...", 0);
 		LoadFonts();
-		SwinGame.Delay(100);
+		SwinGame.Delay(50);
 
 		ShowMessage("Loading images...", 1);
 		LoadImages();
-		SwinGame.Delay(100);
+		SwinGame.Delay(50);
 
 		ShowMessage("Loading sounds...", 2);
 		LoadSounds();
-		SwinGame.Delay(100);
+		SwinGame.Delay(50);
 
 		ShowMessage("Loading music...", 3);
 		LoadMusic();
-		SwinGame.Delay(100);
+		SwinGame.Delay(50);
 
-		SwinGame.Delay(100);
+		SwinGame.Delay(50);
 		ShowMessage("Game loaded...", 5);
-		SwinGame.Delay(100);
+		SwinGame.Delay(50);
 		//EndLoadingScreen(width, height);
 	}
 
@@ -195,18 +195,18 @@ public static class GameResources
 		const int ANI_CELL_COUNT = 11;
 
 		Audio.PlaySoundEffect(_StartSound);
-		SwinGame.Delay(200);
+		SwinGame.Delay(20);
 
 		int i = 0;
 		for (i = 0; i <= ANI_CELL_COUNT - 1; i++) {
 			SwinGame.DrawBitmap(_Background, 0, 0);
 			//SwinGame.DrawBitmapPart(_Animation, (i / ANI_V_CELL_COUNT) * ANI_W, (i % ANI_V_CELL_COUNT) * ANI_H, ANI_W, ANI_H, ANI_X, ANI_Y);
-			SwinGame.Delay(20);
+			SwinGame.Delay(2);
 			SwinGame.RefreshScreen();
 			SwinGame.ProcessEvents();
 		}
 
-		SwinGame.Delay(1500);
+		SwinGame.Delay(300);
 
 	}
 
@@ -246,7 +246,7 @@ public static class GameResources
 	private static void EndLoadingScreen(int width, int height)
 	{
 		SwinGame.ProcessEvents();
-		SwinGame.Delay(500);
+		SwinGame.Delay(100);
 		SwinGame.ClearScreen();
 		SwinGame.RefreshScreen();
 		SwinGame.FreeFont(_LoadingFont);

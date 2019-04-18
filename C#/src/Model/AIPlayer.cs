@@ -115,6 +115,7 @@ public abstract class AIPlayer : Player
 
 			GenerateCoords(ref row, ref column);
 			//generate coordinates for shot
+
 			result = _game.Shoot(row, column);
 			//take shot
 			ProcessShot(row, column, result);
@@ -134,7 +135,7 @@ public abstract class AIPlayer : Player
 			if (SwinGame.WindowCloseRequested())
 				return;
 
-			SwinGame.Delay(5);
+			SwinGame.Delay(1);
 			SwinGame.ProcessEvents();
 			SwinGame.RefreshScreen();
 		}
