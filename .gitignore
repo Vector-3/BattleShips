@@ -2,3 +2,6 @@ bin
 tmp
 out.log
 .DS_Store
+C#/bin/Debug/
+C#/obj/x86/Debug-Windows/
+C#/.vs
