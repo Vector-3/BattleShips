@@ -76,6 +76,9 @@ public static class GameController
 
 		//create the players
 		switch (_aiSetting) {
+            case AIOption.Easy:
+                _ai = new AIEasyPlayer(_theGame);
+                break;
 			case AIOption.Medium:
 				_ai = new AIMediumPlayer(_theGame);
 				break;
@@ -374,6 +377,7 @@ public static class GameController
 	/// <param name="setting">the new difficulty level</param>
 	public static void SetDifficulty(AIOption setting)
 	{
+
 		_aiSetting = setting;
 	}
 
