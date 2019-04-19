@@ -124,7 +124,8 @@ static class MenuController
 				//IsMouseOver the i'th button of the menu
 				if (IsMouseOverMenu(i, level, xOffset)) {
 					PerformMenuAction(menu, i);
-					return true;
+                    Audio.PlaySoundEffect(GameResources.GameSound("Click"));
+                    return true;
 				}
 			}
 
