@@ -110,6 +110,56 @@ public class SeaGrid : ISeaGrid
 		AddShip(row, col, direction, newShip);
 	}
 
+    public bool IsShipAtTile(int row, int col, ShipName[] ignore)
+    {
+        if (_GameTiles[row, col].Ship != null)
+        {
+            foreach (var i in ignore)
+            {
+                if (_GameTiles[row, col].Ship.EnumName == i) return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public bool CanPlaceShipAtPosition(int row, int col, Direction direction, Ship ship)
+    {
+        int size = ship.Size;
+        int currentRow = row;
+        int currentCol = col;
+        int dRow = 0;
+        int dCol = 0;
+
+        if (direction == Direction.LeftRight)
+        {
+            dRow = 0;
+            dCol = 1;
+        }
+        else
+        {
+            dRow = 1;
+            dCol = 0;
+        }
+
+        //check tiles
+        int i = 0;
+        for (i = 0; i <= size - 1; i++)
+        {
+            if (currentRow < 0 | currentRow >= Width | currentCol < 0 | currentCol >= Height)
+            {
+                return false;
+            }
+
+            if (_GameTiles[currentRow, currentCol].Ship != null) return false;
+
+            currentCol += dCol;
+            currentRow += dRow;
+        }
+
+        return true;
+    }
+
 	/// <summary>
 	/// AddShip add a ship to the SeaGrid
 	/// </summary>

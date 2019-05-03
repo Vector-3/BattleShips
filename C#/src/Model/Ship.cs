@@ -37,6 +37,14 @@ public class Ship
 		}
 	}
 
+    public ShipName EnumName
+    {
+        get
+        {
+            return _shipName;
+        }
+    }
+
 	/// <summary>
 	/// The number of cells that this ship occupies.
 	/// </summary>

@@ -2,6 +2,7 @@ bin
 tmp
 out.log
 .DS_Store
-C#/bin/Debug/
-C#/obj/x86/Debug-Windows/
+C#/bin/Debug
+C#/obj/
 C#/.vs
+C#/obj/x86/Debug-Windows/MyGameWin.csproj.CoreCompileInputs.cache

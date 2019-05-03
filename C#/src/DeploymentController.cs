@@ -108,14 +108,15 @@ static class DeploymentController
 			if (col >= 0 & col < GameController.HumanPlayer.PlayerGrid.Width) {
 				//if in the area try to deploy
 				try {
-                    if (_currentDirection == Direction.LeftRight && col > 10 - GameController.ComputerPlayer.Ship(_selectedShip).Size)
+                    if (_currentDirection == Direction.LeftRight && col > 10 - GameController.HumanPlayer.Ship(_selectedShip).Size)
                     {
                         col = 10 - GameController.ComputerPlayer.Ship(_selectedShip).Size;
                     }
-                    else if(_currentDirection == Direction.UpDown && row > 10 - GameController.ComputerPlayer.Ship(_selectedShip).Size)
+                    else if(_currentDirection == Direction.UpDown && row > 10 - GameController.HumanPlayer.Ship(_selectedShip).Size)
                     {
                         row = 10 - GameController.ComputerPlayer.Ship(_selectedShip).Size;
                     }
+                    
 
 					GameController.HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, _currentDirection);
 				} catch (Exception ex) {
