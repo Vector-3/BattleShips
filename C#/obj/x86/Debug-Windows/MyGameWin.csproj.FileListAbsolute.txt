@@ -123,3 +123,4 @@ C:\Users\synxi\Desktop\BattleShips\C#\obj\x86\Debug-Windows\MyGameWin.csproj.Cor
 C:\Users\synxi\Desktop\BattleShips\C#\obj\x86\Debug-Windows\MyGameWin.csproj.CopyComplete
 C:\Users\synxi\Desktop\BattleShips\C#\obj\x86\Debug-Windows\MyGame.exe
 C:\Users\synxi\Desktop\BattleShips\C#\obj\x86\Debug-Windows\MyGame.pdb
+C:\Users\synxi\Desktop\BattleShips\C#\bin\Debug\Resources\sounds\uiclick.wav
