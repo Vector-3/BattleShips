@@ -1,9 +1,4 @@
-using Microsoft.VisualBasic;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
 using SwinGameSDK;
 /// <summary>
 /// This includes a number of utility methods for
@@ -116,8 +111,6 @@ static class UtilityFunctions
 	private static void DrawCustomField(ISeaGrid grid, Player thePlayer, bool small, bool showShips, int left, int top, int width, int height, int cellWidth, int cellHeight,
 	int cellGap)
 	{
-		//SwinGame.FillRectangle(Color.Blue, left, top, width, height)
-
 		int rowTop = 0;
 		int colLeft = 0;
 
@@ -251,7 +244,6 @@ static class UtilityFunctions
 				break;
 		}
         SwinGame.DrawFramerate (675, 585);
-		//SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
 	}
 
 	public static void AddExplosion(int row, int col)

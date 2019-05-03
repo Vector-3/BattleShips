@@ -1,10 +1,4 @@
-
-using Microsoft.VisualBasic;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
 using SwinGameSDK;
 
 /// <summary>
@@ -26,11 +20,13 @@ static class EndingGameController
 		UtilityFunctions.DrawField(GameController.ComputerPlayer.PlayerGrid, GameController.ComputerPlayer, true);
 		UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 
-		Rectangle toDraw = new Rectangle ();
-		toDraw.X = 0;
-		toDraw.Y = 250;
-		toDraw.Width = SwinGame.ScreenWidth ();
-		toDraw.Height = SwinGame.ScreenHeight ();
+        Rectangle toDraw = new Rectangle
+        {
+            X = 0,
+            Y = 250,
+            Width = SwinGame.ScreenWidth(),
+            Height = SwinGame.ScreenHeight()
+        };
         String whatShouldIPrint = "I have long variable names";
 		if (GameController.HumanPlayer.IsDestroyed) {
             whatShouldIPrint = "YOU LOSE!";

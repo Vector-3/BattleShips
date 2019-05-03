@@ -1,10 +1,4 @@
-
-using Microsoft.VisualBasic;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
 using SwinGameSDK;
 
 public static class GameResources
@@ -228,17 +222,18 @@ public static class GameResources
 
         // TODO: Do this the right way
         SwinGame.DrawCell (_LoaderFull, 0, BG_X, BG_Y);
-		//Draw Bitmap Part   (src, srcX, srcY, srcW, srcH, x, y)
-		//SwinGame.DrawBitmapPart(_LoaderFull, 0, 0, fullW, 66, BG_X, BG_Y);
+        //Draw Bitmap Part   (src, srcX, srcY, srcW, srcH, x, y)
+        //SwinGame.DrawBitmapPart(_LoaderFull, 0, 0, fullW, 66, BG_X, BG_Y);
 
-		Rectangle toDraw = new Rectangle ();
-        toDraw.X = TX;
-		toDraw.Y =  TY;
-		toDraw.Width = TW;
-        toDraw.Height = TH;
+        Rectangle toDraw = new Rectangle
+        {
+            X = TX,
+            Y = TY,
+            Width = TW,
+            Height = TH
+        };
 
         SwinGame.DrawText (message, Color.White, Color.Transparent,_LoadingFont,FontAlignment.AlignCenter,toDraw);
-		//SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH);
 
 		SwinGame.RefreshScreen();
 		SwinGame.ProcessEvents();
