@@ -5,3 +5,4 @@ out.log
 C#/bin/Debug/
 C#/obj/x86/Debug-Windows/
 C#/.vs
+*.exe
