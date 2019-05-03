@@ -1,12 +1,6 @@
-﻿
-using Microsoft.VisualBasic;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
-
-/// <summary>
+// <summary>
 /// The AIEasyPlayer locates ships but may fire slightly offset to where they intend
 /// </summary>
 public class AIEasyPlayer : AIPlayer

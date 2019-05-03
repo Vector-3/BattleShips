@@ -1,10 +1,5 @@
-
-using Microsoft.VisualBasic;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
 using System.IO;
 using SwinGameSDK;
 
@@ -35,14 +30,15 @@ static class HighScoreController
 		/// <returns>a value that indicates the sort order</returns>
 		public int CompareTo(object obj)
 		{
-			if (obj is Score) {
-				Score other = (Score)obj;
-
-				return other.Value - this.Value;
-			} else {
-				return 0;
-			}
-		}
+            if (obj is Score other)
+            {
+                return other.Value - Value;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 	}
 
 
@@ -172,10 +168,12 @@ static class HighScoreController
 
 		//is it a high score
 		if (value > _Scores[_Scores.Count - 1].Value) {
-			Score s = new Score();
-			s.Value = value;
+            Score s = new Score
+            {
+                Value = value
+            };
 
-			GameController.AddNewState(GameState.ViewingHighScores);
+            GameController.AddNewState(GameState.ViewingHighScores);
 
 			int x = 0;
 			x = SCORES_LEFT + SwinGame.TextWidth(GameResources.GameFont("Courier"), "Name: ");
